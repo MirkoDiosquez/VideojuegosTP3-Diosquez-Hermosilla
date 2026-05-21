@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b1ihltmfjfvml"]
+
+[ext_resource type="PackedScene" uid="uid://chtlwyapqm6tw" path="res://Escenas/messi.tscn" id="1_4i161"]
+
+[node name="Messias" type="CharacterBody2D" unique_id=105998029]
+
+[node name="pj" parent="." unique_id=254444368 instance=ExtResource("1_4i161")]
+frame_progress = 0.0923261

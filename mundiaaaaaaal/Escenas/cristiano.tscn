@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://1ta1e8gypqcw"]
+
+[ext_resource type="Texture2D" uid="uid://dk4v28dha2o8v" path="res://Assets/Characters/cristiano.png" id="1_m535h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1pey"]
+atlas = ExtResource("1_m535h")
+region = Rect2(0, 4026, 192, 183)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv76j"]
+atlas = ExtResource("1_m535h")
+region = Rect2(192, 4026, 192, 183)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8gui"]
+atlas = ExtResource("1_m535h")
+region = Rect2(384, 4026, 192, 183)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eut1t"]
+atlas = ExtResource("1_m535h")
+region = Rect2(576, 4026, 192, 183)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3yet"]
+atlas = ExtResource("1_m535h")
+region = Rect2(768, 4026, 192, 183)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpsmh"]
+atlas = ExtResource("1_m535h")
+region = Rect2(960, 4026, 192, 183)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phoam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1pey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv76j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8gui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eut1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3yet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpsmh")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[node name="cristiano" type="CharacterBody2D" unique_id=1698057143]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2043486112]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_phoam")
+animation = &"hit"
