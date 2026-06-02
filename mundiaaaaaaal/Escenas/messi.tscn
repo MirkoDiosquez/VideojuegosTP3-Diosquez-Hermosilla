@@ -135,5 +135,4 @@ animations = [{
 [node name="Messi" type="AnimatedSprite2D" unique_id=254444368]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xpac5")
-animation = &"walk"
-frame_progress = 0.12552615
+animation = &"idle"

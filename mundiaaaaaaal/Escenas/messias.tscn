@@ -2,7 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://b4vvc7fko2h7c" path="res://Escenas/messi.tscn" id="1_4i161"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i161"]
+size = Vector2(21, 32)
+
 [node name="Messias" type="CharacterBody2D" unique_id=105998029]
 
 [node name="pj" parent="." unique_id=254444368 instance=ExtResource("1_4i161")]
-frame_progress = 0.0923261
+
+[node name="AttackZone" type="Area2D" parent="." unique_id=2041725630]
+position = Vector2(37, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=665355606]
+shape = SubResource("RectangleShape2D_4i161")
+debug_color = Color(0.99376816, 0, 0.23955843, 0.41960785)
+
+[node name="DamageZone" type="Area2D" parent="." unique_id=2138812461]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=522580654]
+shape = SubResource("RectangleShape2D_4i161")
+debug_color = Color(0.19526637, 0.512704, 1, 0.41960785)
+metadata/_edit_lock_ = true
