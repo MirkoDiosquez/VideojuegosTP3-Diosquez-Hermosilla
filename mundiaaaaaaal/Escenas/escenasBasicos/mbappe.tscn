@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://mthxdwid8p2c" path="res://Assets/Characters/mbappe/mbappe.png" id="1_377xp"]
 [ext_resource type="Script" uid="uid://d13tn8vcwlf16" path="res://Escenas/Scripts/jugador.gd" id="1_h2qm3"]
+[ext_resource type="PackedScene" uid="uid://cyyc4qvcpupfc" path="res://Escenas/escenasSuper/supermbappe.tscn" id="2_h6ijg"]
+[ext_resource type="PackedScene" uid="uid://okkd3vpemy43" path="res://Escenas/explosion.tscn" id="3_iq6sa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_anc0t"]
 atlas = ExtResource("1_377xp")
@@ -94,7 +96,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 15.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -149,17 +151,19 @@ size = Vector2(29, 47)
 [node name="mbappe" type="CharacterBody2D" unique_id=186349472]
 position = Vector2(54, 14)
 script = ExtResource("1_h2qm3")
+escena_super = ExtResource("2_h6ijg")
+escena_explosion = ExtResource("3_iq6sa")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=595074694]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bkr2c")
-animation = &"walk"
+animation = &"hit"
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=2025531570]
 position = Vector2(29, 2)
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=1736212361]
@@ -169,8 +173,8 @@ metadata/_edit_group_ = true
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1073215025 groups=["damagezone"]]
 position = Vector2(0, 5)
-collision_layer = 4
-collision_mask = 2
+collision_layer = 2
+collision_mask = 4
 monitoring = false
 metadata/_edit_group_ = true
 

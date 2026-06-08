@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d13tn8vcwlf16" path="res://Escenas/Scripts/jugador.gd" id="1_0w7ks"]
 [ext_resource type="Texture2D" uid="uid://dk4v28dha2o8v" path="res://Assets/Characters/cristiano/cristiano.png" id="1_m535h"]
+[ext_resource type="PackedScene" uid="uid://dq77jdo7f708t" path="res://Escenas/escenasSuper/supercr7.tscn" id="2_dhj8n"]
+[ext_resource type="PackedScene" uid="uid://okkd3vpemy43" path="res://Escenas/explosion.tscn" id="3_nwt10"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m535h"]
 atlas = ExtResource("1_m535h")
@@ -94,7 +96,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 10.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -146,12 +148,14 @@ size = Vector2(21, 32)
 [node name="cristiano" type="CharacterBody2D" unique_id=1698057143]
 position = Vector2(164, 537)
 script = ExtResource("1_0w7ks")
+escena_super = ExtResource("2_dhj8n")
+escena_explosion = ExtResource("3_nwt10")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2043486112]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_phoam")
-animation = &"walk"
+animation = &"hit"
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=811636955]
 position = Vector2(37, 0)

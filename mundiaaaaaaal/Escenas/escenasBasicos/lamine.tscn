@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d13tn8vcwlf16" path="res://Escenas/Scripts/jugador.gd" id="1_3ahv4"]
 [ext_resource type="Texture2D" uid="uid://dmp35sj77fv43" path="res://Assets/Characters/lamine/lamine.png" id="1_hda2y"]
+[ext_resource type="PackedScene" uid="uid://dvneffpn5ojea" path="res://Escenas/escenasSuper/superlamine.tscn" id="2_01wuf"]
+[ext_resource type="PackedScene" uid="uid://okkd3vpemy43" path="res://Escenas/explosion.tscn" id="3_yngcu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88cbo"]
 atlas = ExtResource("1_hda2y")
@@ -94,7 +96,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 15.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -149,17 +151,19 @@ size = Vector2(27, 44)
 [node name="lamine" type="CharacterBody2D" unique_id=1560826553]
 position = Vector2(148, 83)
 script = ExtResource("1_3ahv4")
+escena_super = ExtResource("2_01wuf")
+escena_explosion = ExtResource("3_yngcu")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=120761986]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rn8qb")
-animation = &"walk"
+animation = &"hit"
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=1861361355]
 position = Vector2(37, -4)
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=1892594359]
 position = Vector2(-6, 0)

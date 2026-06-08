@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://b1ihltmfjfvml"]
 
-[ext_resource type="PackedScene" uid="uid://b4vvc7fko2h7c" path="res://Escenas/messi.tscn" id="1_4i161"]
+[ext_resource type="Script" uid="uid://d13tn8vcwlf16" path="res://Escenas/Scripts/jugador.gd" id="1_i4vyu"]
+[ext_resource type="PackedScene" uid="uid://bo80aiqpmts18" path="res://Escenas/escenasSuper/super_messi.tscn" id="2_q1ryp"]
+[ext_resource type="PackedScene" uid="uid://okkd3vpemy43" path="res://Escenas/explosion.tscn" id="3_5ps06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4i161"]
 size = Vector2(21, 32)
 
 [node name="Messias" type="CharacterBody2D" unique_id=105998029]
+script = ExtResource("1_i4vyu")
+escena_super = ExtResource("2_q1ryp")
+escena_explosion = ExtResource("3_5ps06")
 
-[node name="pj" parent="." unique_id=254444368 instance=ExtResource("1_4i161")]
+[node name="pj" parent="." unique_id=254444368]
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=2041725630]
 position = Vector2(37, 0)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvneffpn5ojea"]
 
 [ext_resource type="Texture2D" uid="uid://cttwocq03w2wu" path="res://Assets/Characters/lamine/superYamal/NightBorne.png" id="1_hf3mv"]
+[ext_resource type="Script" uid="uid://cgbt2k1x5brq1" path="res://Escenas/Scripts/jugador_super.gd" id="1_rcgws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcgws"]
 atlas = ExtResource("1_hf3mv")
@@ -189,9 +190,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qpxwb")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
-"speed": 16.0
+"speed": 17.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -256,16 +257,20 @@ size = Vector2(38, 56.5)
 size = Vector2(29.75, 53)
 
 [node name="superLamine" type="CharacterBody2D" unique_id=1753723217]
+script = ExtResource("1_rcgws")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1962699423]
 texture_filter = 1
-scale = Vector2(2, 2)
+scale = Vector2(3.2514284, 3.3400002)
 sprite_frames = SubResource("SpriteFrames_defmc")
-animation = &"idle"
-frame_progress = 0.8417564
+animation = &"hit"
+frame = 11
+frame_progress = 1.0
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=1314156976]
 position = Vector2(37, -4)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=527305981]
 position = Vector2(22, 12.25)
@@ -274,6 +279,8 @@ debug_color = Color(0.9232474, 0, 0.28326875, 0.41960785)
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=546519031]
 position = Vector2(0, 19)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=690835948]
 shape = SubResource("RectangleShape2D_rcgws")

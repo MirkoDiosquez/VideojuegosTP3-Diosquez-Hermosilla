@@ -94,7 +94,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 10.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,7 +105,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -151,8 +151,8 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=157645127]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_sx55t")
-animation = &"idle"
-frame_progress = 0.65813595
+animation = &"walk"
+frame_progress = 0.8495409
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=274573587]
 position = Vector2(37, 0)

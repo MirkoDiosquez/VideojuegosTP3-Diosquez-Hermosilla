@@ -24,4 +24,4 @@ func elegir(ruta : String) -> void:
 		$Sprite2D/LabelTurno.text = "                     JUGADOR P2 ELIGE"
 	elif turno == 2:
 		Seleccion.escena_p2 = ruta
-		get_tree().change_scene_to_file("res://escenas/arena.tscn")
+		get_tree().change_scene_to_file("res://Escenas/arena.tscn")

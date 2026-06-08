@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bo80aiqpmts18"]
 
-[ext_resource type="Texture2D" uid="uid://cig6rjqju2u2m" path="res://Assets/Characters/superMessi.png" id="1_4kv65"]
+[ext_resource type="Texture2D" uid="uid://cig6rjqju2u2m" path="res://Assets/Characters/messi/superMessi.png" id="1_4kv65"]
+[ext_resource type="Script" uid="uid://cgbt2k1x5brq1" path="res://Escenas/Scripts/jugador_super.gd" id="1_c61xk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6ogk"]
 atlas = ExtResource("1_4kv65")
@@ -93,7 +94,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 10.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -143,6 +144,7 @@ animations = [{
 size = Vector2(21, 32)
 
 [node name="superMessi" type="CharacterBody2D" unique_id=702332788]
+script = ExtResource("1_c61xk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1962479584]
 texture_filter = 1
@@ -153,6 +155,8 @@ frame_progress = 1.0
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=1676510131]
 position = Vector2(37, 0)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=1186366624]
 shape = SubResource("RectangleShape2D_4kv65")
@@ -160,6 +164,8 @@ debug_color = Color(0.99376816, 0, 0.23955843, 0.41960785)
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1399995951]
 position = Vector2(0, 4)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1604094479]
 shape = SubResource("RectangleShape2D_4kv65")

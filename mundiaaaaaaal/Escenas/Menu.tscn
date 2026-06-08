@@ -34,7 +34,6 @@ text = "                       JUGADOR P1 ELIGE"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Sprite2D" unique_id=970675730]
 custom_minimum_size = Vector2(800, 150)
-anchors_preset = -1
 offset_left = -483.28766
 offset_top = -214.15247
 offset_right = 596.82196

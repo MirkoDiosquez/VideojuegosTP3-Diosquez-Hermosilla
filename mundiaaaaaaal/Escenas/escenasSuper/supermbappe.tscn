@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cyyc4qvcpupfc"]
 
 [ext_resource type="Texture2D" uid="uid://cvu6vnrt1xp1i" path="res://Assets/Characters/mbappe/superMbappe.png" id="1_kdlk0"]
+[ext_resource type="Script" uid="uid://cgbt2k1x5brq1" path="res://Escenas/Scripts/jugador_super.gd" id="1_o0vq1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdlk0"]
 atlas = ExtResource("1_kdlk0")
@@ -197,6 +198,7 @@ animations = [{
 size = Vector2(50.75, 91.5)
 
 [node name="supermbappe" type="CharacterBody2D" unique_id=1838993613]
+script = ExtResource("1_o0vq1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1737486354]
 texture_filter = 1
@@ -207,6 +209,8 @@ frame_progress = 0.10691594
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=77842858]
 position = Vector2(37, 0)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=505279470]
 position = Vector2(28, 15)
@@ -215,6 +219,8 @@ debug_color = Color(0.99376816, 0, 0.23955843, 0.41960785)
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1962063553]
 position = Vector2(0, 22)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=595799538]
 shape = SubResource("RectangleShape2D_fpgio")

@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-@export var velocidad : float = 150.0
+@export var velocidad : float = 220.0
 @export var vida_maxima : int = 100
 @export var numero_jugador : int = 1
-@export var danio_ataque : int = 10 
+@export var danio_ataque : int = 15 
 
-@export var escena_super : PackedScene
-@export var escena_explosion : PackedScene
+@export var porcentaje_reduccion : int = 20 
 
 @export var arriba : String = "ar_a"
 @export var abajo : String = "ab_a"
@@ -17,7 +16,6 @@ extends CharacterBody2D
 
 var vida : int = vida_maxima
 var atacando : bool = false
-var transformado : bool = false
 var rival : CharacterBody2D = null
 
 func _ready() -> void:
@@ -44,8 +42,6 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed(atacar) and not atacando:
 		iniciarAtaque()
-	if Input.is_action_just_pressed(transformar) and not transformado:
-		iniciarTransformacion()
 
 func flipear() -> void:
 	if rival != null and is_instance_valid(rival):
@@ -63,49 +59,28 @@ func iniciarAtaque() -> void:
 	atacando = true
 	$AnimatedSprite2D.play("hit")
 	
-	
 	if has_node("AttackZone"):
 		var areas_golpeadas = $AttackZone.get_overlapping_areas()
+		
 		for area in areas_golpeadas:
 			var cuerpo = area.get_parent() 
 			if cuerpo != null and cuerpo.is_in_group("jugador") and cuerpo != self:
 				cuerpo.recibirDanio(danio_ataque)
+	else:
+		print("Chequeá el nombre del nodo: Falta AttackZone en ", name)
+			
 	await $AnimatedSprite2D.animation_finished
 	atacando = false
 
-func iniciarTransformacion() -> void:
-	transformado = true
-	
-	if escena_explosion != null:
-		var explosion = escena_explosion.instantiate()
-		explosion.global_position = global_position
-		get_parent().add_child(explosion)
-	
-	if escena_super != null:
-		var super_pj = escena_super.instantiate()
-		
-		super_pj.numero_jugador = numero_jugador
-		super_pj.arriba = arriba
-		super_pj.abajo = abajo
-		super_pj.izquierda = izquierda
-		super_pj.derecha = derecha
-		super_pj.atacar = atacar
-		super_pj.transformar = transformar
-		super_pj.rival = rival
-		
-		get_parent().add_child(super_pj)
-		
-		super_pj.vida = vida
-		super_pj.global_position = global_position
-		super_pj.add_to_group("jugador")
-		
-		if is_instance_valid(rival):
-			rival.rival = super_pj
-		
-		queue_free()
-
 func recibirDanio(cantidad: int) -> void:
-	vida -= cantidad
+	var descuento = (cantidad * porcentaje_reduccion) / 100
+	var danio_final = cantidad - descuento
+	
+	if danio_final < 0:
+		danio_final = 0 
+		
+	vida -= danio_final
+	
 	if vida <= 0:
 		morir()
 
