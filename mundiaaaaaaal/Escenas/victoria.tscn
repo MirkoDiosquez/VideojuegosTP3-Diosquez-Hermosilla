@@ -1,10 +1,52 @@
 [gd_scene format=3 uid="uid://do85a01jxjs8y"]
 
-[ext_resource type="Texture2D" uid="uid://defa63rvuxb2m" path="res://Assets/Background/victoria.png" id="1_1um40"]
+[ext_resource type="Script" uid="uid://pjssujhlcn3a" path="res://Scripts/victoria.gd" id="1_1ther"]
+[ext_resource type="Texture2D" uid="uid://defa63rvuxb2m" path="res://Assets/UI/victoria.png" id="1_1um40"]
 
 [node name="victoria" type="Node2D" unique_id=611210133]
+script = ExtResource("1_1ther")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1074444193]
 position = Vector2(576, 324)
 scale = Vector2(0.75, 0.640625)
 texture = ExtResource("1_1um40")
+
+[node name="menuJugar" type="Button" parent="." unique_id=378991797]
+texture_filter = 1
+offset_left = 505.0
+offset_top = 425.0
+offset_right = 636.0
+offset_bottom = 461.0
+text = "JUGAR
+"
+
+[node name="salir" type="Button" parent="." unique_id=498820257]
+texture_filter = 1
+offset_left = 505.0
+offset_top = 466.0
+offset_right = 636.0
+offset_bottom = 502.0
+text = "SALIR
+"
+
+[node name="inicio" type="Button" parent="." unique_id=369204904]
+texture_filter = 1
+offset_left = 505.0
+offset_top = 383.0
+offset_right = 636.0
+offset_bottom = 419.0
+text = "MENU
+
+"
+
+[node name="Label" type="Label" parent="." unique_id=394120984]
+texture_filter = 1
+offset_left = 210.0
+offset_top = 218.0
+offset_right = 930.0
+offset_bottom = 328.0
+text = "J1 GANO"
+
+[connection signal="focus_entered" from="menuJugar" to="." method="_on_boton_menu_pressed"]
+[connection signal="focus_entered" from="salir" to="." method="_on_boton_salir_pressed"]
+[connection signal="focus_entered" from="inicio" to="." method="_on_boton_inicio_pressed"]

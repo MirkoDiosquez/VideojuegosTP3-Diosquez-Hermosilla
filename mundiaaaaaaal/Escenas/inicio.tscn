@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dlyju2b33rbjj"]
+[gd_scene format=3 uid="uid://ji427jxmcrfp"]
 
 [ext_resource type="Texture2D" uid="uid://6cbj2l0jwdc1" path="res://Assets/UI/menu.png" id="1_lnt83"]
-[ext_resource type="Script" uid="uid://b825q6b7prm4n" path="res://Escenas/inicio.gd" id="1_p25xy"]
+[ext_resource type="Script" uid="uid://cx86wjkvm7wdm" path="res://Escenas/inicio.gd" id="1_p25xy"]
 
 [node name="inicio" type="Node2D" unique_id=472231337]
 script = ExtResource("1_p25xy")
@@ -13,31 +13,30 @@ texture = ExtResource("1_lnt83")
 
 [node name="jugar" type="Button" parent="." unique_id=1498763861]
 texture_filter = 1
-offset_left = 521.0
+offset_left = 526.0
 offset_top = 425.0
-offset_right = 652.0
+offset_right = 657.0
 offset_bottom = 461.0
 text = "JUGAR
 "
 
 [node name="salir" type="Button" parent="." unique_id=406764485]
 texture_filter = 1
-offset_left = 521.0
+offset_left = 526.0
 offset_top = 510.0
-offset_right = 652.0
+offset_right = 657.0
 offset_bottom = 546.0
 text = "SALIR
 "
 
 [node name="controles" type="Button" parent="." unique_id=1642704799]
 texture_filter = 1
-offset_left = 521.0
+offset_left = 526.0
 offset_top = 468.0
-offset_right = 652.0
+offset_right = 657.0
 offset_bottom = 504.0
 text = "CONTROLES
 "
 
-[connection signal="focus_entered" from="jugar" to="." method="_on_boton_menu_pressed"]
 [connection signal="focus_entered" from="salir" to="." method="_on_boton_salir_pressed"]
 [connection signal="focus_entered" from="controles" to="." method="_on_boton_controles_pressed"]

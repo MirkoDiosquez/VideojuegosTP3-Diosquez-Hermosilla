@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://ddgjsl1g0i5nr"]
 
-[ext_resource type="Texture2D" uid="uid://cildu1stmhgyt" path="res://Assets/UI/Controles.png" id="1_wlnyy"]
+[ext_resource type="Texture2D" uid="uid://b4pbhylpsais" path="res://Assets/UI/controles.png" id="1_cs0vl"]
+[ext_resource type="Script" uid="uid://cadb2r2qkeaee" path="res://Escenas/controles.gd" id="2_cs0vl"]
 
 [node name="Controles" type="Sprite2D" unique_id=139326931]
 position = Vector2(577.49994, 324.5)
 scale = Vector2(0.9137658, 0.77078384)
-texture = ExtResource("1_wlnyy")
+texture = ExtResource("1_cs0vl")
+script = ExtResource("2_cs0vl")
 
 [node name="Volver" type="Button" parent="." unique_id=885709315]
 texture_filter = 1
@@ -14,3 +16,5 @@ offset_top = -302.9384
 offset_right = -374.8224
 offset_bottom = -264.01697
 text = "VOLVER"
+
+[connection signal="focus_entered" from="Volver" to="." method="_on_boton_volver_pressed"]
