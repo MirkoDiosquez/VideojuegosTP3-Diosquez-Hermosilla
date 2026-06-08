@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ji427jxmcrfp"]
+
+[ext_resource type="Texture2D" uid="uid://6cbj2l0jwdc1" path="res://Assets/UI/menu.png" id="1_lnt83"]
+
+[node name="menu" type="Node2D" unique_id=472231337]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=542770212]
+position = Vector2(578.5, 331.5)
+scale = Vector2(0.75065106, 0.64941406)
+texture = ExtResource("1_lnt83")
+
+[node name="jugar" type="Button" parent="." unique_id=1498763861]
+texture_filter = 1
+offset_left = 526.0
+offset_top = 425.0
+offset_right = 657.0
+offset_bottom = 461.0
+text = "JUGAR
+"
+
+[node name="controles" type="Button" parent="." unique_id=1642704799]
+texture_filter = 1
+offset_left = 526.0
+offset_top = 468.0
+offset_right = 657.0
+offset_bottom = 504.0
+text = "CONTROLES
+"
+
+[node name="salir" type="Button" parent="." unique_id=406764485]
+texture_filter = 1
+offset_left = 526.0
+offset_top = 510.0
+offset_right = 657.0
+offset_bottom = 546.0
+text = "SALIR
+"

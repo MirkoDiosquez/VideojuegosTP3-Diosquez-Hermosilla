@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://givhi016m7wd"
-path="res://.godot/imported/background.png-fde76956b905bc0b72db8b734288e7f4.ctex"
+uid="uid://1uuh234psgq3"
+path="res://.godot/imported/Black_Knight_All_Without_FX.png-57146e401e7ca19fe25e44f1cca325e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/background.png"
-dest_files=["res://.godot/imported/background.png-fde76956b905bc0b72db8b734288e7f4.ctex"]
+source_file="res://Assets/Characters/messi/Black Knight/SpriteSheets_All/Caracter_without_FX/Black_Knight_All_Without_FX.png"
+dest_files=["res://.godot/imported/Black_Knight_All_Without_FX.png-57146e401e7ca19fe25e44f1cca325e0.ctex"]
 
 [params]
 
