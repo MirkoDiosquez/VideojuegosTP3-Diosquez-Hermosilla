@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dlyju2b33rbjj"]
+
+[ext_resource type="Texture2D" uid="uid://b421y2g3gjha5" path="res://Escenas/ImagenMenu.jpg" id="1_xe2ru"]
+[ext_resource type="Script" uid="uid://2stteg800c42" path="res://Escenas/Scripts/menu.gd" id="1_xhjix"]
+
+[node name="Menu" type="Node" unique_id=858813120]
+script = ExtResource("1_xhjix")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=924393181]
+position = Vector2(582, 324.50003)
+scale = Vector2(0.60833335, 0.59537035)
+texture = ExtResource("1_xe2ru")
+
+[node name="LabelTurno" type="Label" parent="Sprite2D" unique_id=1840536630]
+offset_left = 39.452087
+offset_top = -373.71698
+offset_right = 973.4521
+offset_bottom = -306.71698
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 43
+text = "ELIGE EL PERSONAJE PARA COMBATIR P2"
+
+[node name="LabelTurno2" type="Label" parent="Sprite2D" unique_id=335300467]
+offset_left = -882.7397
+offset_top = -368.67813
+offset_right = 92.260315
+offset_bottom = -231.67813
+pivot_offset = Vector2(461.91785, -110.85533)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 43
+text = "                       JUGADOR P1 ELIGE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sprite2D" unique_id=970675730]
+custom_minimum_size = Vector2(800, 150)
+anchors_preset = -1
+offset_left = -483.28766
+offset_top = -214.15247
+offset_right = 596.82196
+offset_bottom = -14.152466
+
+[node name="Button" type="Button" parent="Sprite2D/HBoxContainer" unique_id=1438441243]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_constants/h_separation = 16384
+text = "LIONEL PEPSI"
+
+[node name="Button2" type="Button" parent="Sprite2D/HBoxContainer" unique_id=42529438]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+text = "MBAPPE
+"
+
+[node name="Button3" type="Button" parent="Sprite2D/HBoxContainer" unique_id=1988520602]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+text = "LAMINE YAMAL"
+
+[node name="Button4" type="Button" parent="Sprite2D/HBoxContainer" unique_id=272508704]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+text = "VIRGIL VAN DIJK"
+
+[node name="Button5" type="Button" parent="Sprite2D/HBoxContainer" unique_id=465451722]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+text = "CRISTIANO PENALDO"
+
+[connection signal="pressed" from="Sprite2D/HBoxContainer/Button" to="." method="_on_messi_pressed"]
+[connection signal="pressed" from="Sprite2D/HBoxContainer/Button2" to="." method="_on_mbappe_pressed"]
+[connection signal="pressed" from="Sprite2D/HBoxContainer/Button3" to="." method="_on_lamin_pressed"]
+[connection signal="pressed" from="Sprite2D/HBoxContainer/Button4" to="." method="_on_vandijk_pressed"]
+[connection signal="pressed" from="Sprite2D/HBoxContainer/Button5" to="." method="_on_cristiano_pressed"]

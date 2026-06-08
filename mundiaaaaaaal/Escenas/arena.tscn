@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://b5k7088ar0tem"]
 
 [ext_resource type="PackedScene" uid="uid://clsnfap2msn8a" path="res://Escenas/background.tscn" id="1_47x6f"]
+[ext_resource type="Script" uid="uid://ni7hwytcyo4o" path="res://Escenas/Scripts/arena.gd" id="1_lv0p8"]
+[ext_resource type="PackedScene" uid="uid://cpsqe0mloxqkm" path="res://Escenas/barra_vida.tscn" id="4_honmh"]
 
 [node name="Arena" type="Node2D" unique_id=2074919389]
+script = ExtResource("1_lv0p8")
 
 [node name="background" parent="." unique_id=1332310803 instance=ExtResource("1_47x6f")]
 position = Vector2(572.5, 325.75)
 scale = Vector2(0.77148443, 0.6333007)
+
+[node name="BarraVida" parent="." unique_id=330590548 instance=ExtResource("4_honmh")]

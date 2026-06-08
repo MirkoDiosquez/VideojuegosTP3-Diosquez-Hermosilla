@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bqbhg4pd0kaq7"]
 
+[ext_resource type="Script" uid="uid://d13tn8vcwlf16" path="res://Escenas/Scripts/jugador.gd" id="1_bi62n"]
 [ext_resource type="Texture2D" uid="uid://c4i67viyaek7r" path="res://Assets/Characters/vandijk/vandijk.png" id="1_nxkc2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8n16"]
@@ -143,6 +144,9 @@ animations = [{
 size = Vector2(21, 32.5)
 
 [node name="vandijk" type="CharacterBody2D" unique_id=1855766610]
+position = Vector2(196, 528)
+script = ExtResource("1_bi62n")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=157645127]
 texture_filter = 1
@@ -152,6 +156,8 @@ frame_progress = 0.65813595
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=274573587]
 position = Vector2(37, 0)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=312238744]
 shape = SubResource("RectangleShape2D_kre0j")
@@ -159,6 +165,8 @@ debug_color = Color(0.99376816, 0, 0.23955843, 0.41960785)
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1269386598]
 position = Vector2(0, 4)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=920289628]
 shape = SubResource("RectangleShape2D_kre0j")

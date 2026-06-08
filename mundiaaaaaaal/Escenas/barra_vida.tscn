@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cpsqe0mloxqkm"]
+
+[ext_resource type="Script" uid="uid://bqlsavbxwenqs" path="res://Escenas/Scripts/vida.gd" id="1_qld2p"]
+
+[sub_resource type="Theme" id="Theme_sd6kp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qld2p"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_qld2p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uwkf"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="BarraVida" type="CanvasLayer" unique_id=330590548]
+script = ExtResource("1_qld2p")
+
+[node name="Player1_container" type="MarginContainer" parent="." unique_id=1889978952]
+offset_right = 200.0
+offset_bottom = 200.0
+pivot_offset = Vector2(10, 10)
+
+[node name="ProgressBar" type="ProgressBar" parent="Player1_container" unique_id=2064736275]
+layout_mode = 2
+theme = SubResource("Theme_sd6kp")
+theme_override_colors/font_color = Color(0.06666667, 0.972549, 0.07058824, 1)
+theme_override_colors/font_outline_color = Color(0.817903, 0.14126179, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/fill = SubResource("StyleBoxFlat_qld2p")
+value = 100.0
+
+[node name="Player2_container" type="MarginContainer" parent="." unique_id=1526862604]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -206.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 0
+pivot_offset = Vector2(-210, 10)
+
+[node name="ProgressBar" type="ProgressBar" parent="Player2_container" unique_id=362136501]
+modulate = Color(0.9882218, 0.9882218, 0.9882218, 1)
+layout_mode = 2
+theme = SubResource("Theme_qld2p")
+theme_override_colors/font_color = Color(0.29803923, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.4994585, 0.35534066, 0.4265827, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/fill = SubResource("StyleBoxFlat_3uwkf")
+value = 100.0

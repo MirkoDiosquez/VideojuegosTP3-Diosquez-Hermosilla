@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cx26q3syyhe0r"]
 
+[ext_resource type="Script" uid="uid://d13tn8vcwlf16" path="res://Escenas/Scripts/jugador.gd" id="1_0w7ks"]
 [ext_resource type="Texture2D" uid="uid://dk4v28dha2o8v" path="res://Assets/Characters/cristiano/cristiano.png" id="1_m535h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m535h"]
@@ -143,6 +144,9 @@ animations = [{
 size = Vector2(21, 32)
 
 [node name="cristiano" type="CharacterBody2D" unique_id=1698057143]
+position = Vector2(164, 537)
+script = ExtResource("1_0w7ks")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2043486112]
 texture_filter = 1
@@ -151,6 +155,8 @@ animation = &"walk"
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=811636955]
 position = Vector2(37, 0)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=890244793]
 shape = SubResource("RectangleShape2D_wsqb2")
@@ -158,6 +164,8 @@ debug_color = Color(0.99376816, 0, 0.23955843, 0.41960785)
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1915041700]
 position = Vector2(0, 4)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=325296179]
 shape = SubResource("RectangleShape2D_wsqb2")

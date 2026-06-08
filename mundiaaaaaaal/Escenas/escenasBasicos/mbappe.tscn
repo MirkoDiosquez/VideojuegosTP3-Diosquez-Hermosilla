@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bl8bxdo58jhro"]
 
-[ext_resource type="Texture2D" uid="uid://mthxdwid8p2c" path="res://Assets/Characters/mbappe.png" id="1_377xp"]
+[ext_resource type="Texture2D" uid="uid://mthxdwid8p2c" path="res://Assets/Characters/mbappe/mbappe.png" id="1_377xp"]
+[ext_resource type="Script" uid="uid://d13tn8vcwlf16" path="res://Escenas/Scripts/jugador.gd" id="1_h2qm3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_anc0t"]
 atlas = ExtResource("1_377xp")
@@ -91,9 +92,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rv4f4")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -142,16 +143,23 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kre0j"]
 size = Vector2(21.125, 35.5625)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2qm3"]
+size = Vector2(29, 47)
+
 [node name="mbappe" type="CharacterBody2D" unique_id=186349472]
+position = Vector2(54, 14)
+script = ExtResource("1_h2qm3")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=595074694]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bkr2c")
-animation = &"hit"
-frame_progress = 0.86961776
+animation = &"walk"
 
 [node name="AttackZone" type="Area2D" parent="." unique_id=2025531570]
-position = Vector2(43, 5)
+position = Vector2(29, 2)
+collision_layer = 2
+collision_mask = 4
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=1736212361]
@@ -159,11 +167,18 @@ shape = SubResource("RectangleShape2D_kre0j")
 debug_color = Color(0.99376816, 0, 0.23955843, 0.41960785)
 metadata/_edit_group_ = true
 
-[node name="DamageZone" type="Area2D" parent="." unique_id=1073215025]
+[node name="DamageZone" type="Area2D" parent="." unique_id=1073215025 groups=["damagezone"]]
 position = Vector2(0, 5)
+collision_layer = 4
+collision_mask = 2
+monitoring = false
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1712875193]
 shape = SubResource("RectangleShape2D_kre0j")
 debug_color = Color(0.19526637, 0.512704, 1, 0.41960785)
 metadata/_edit_group_ = true
+
+[node name="ContactoExterior" type="CollisionShape2D" parent="." unique_id=656925068]
+position = Vector2(-4.5, 0.5)
+shape = SubResource("RectangleShape2D_h2qm3")
